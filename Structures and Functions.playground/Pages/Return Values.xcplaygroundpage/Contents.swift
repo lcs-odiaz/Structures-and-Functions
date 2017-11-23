@@ -35,7 +35,7 @@ func distannce(fromX: Double, fromY: Double, toX:Double, toY: Double) -> Double 
 // Now invoke the function to calculate the distance between (0, 0) and (3, 4)
 distannce(fromX: 0, fromY: 0, toX: 3, toY: 4) //the result will be 5
 // NOTE: Before you run the code, make a prediction about the distance between these two points.
-
+//b
 /*:
  ### Documenting functions
  When we start to add behaviour to our programs using functions, it's important to document how each function works.
