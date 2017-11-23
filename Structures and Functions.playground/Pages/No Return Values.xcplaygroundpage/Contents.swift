@@ -21,7 +21,10 @@ import Foundation
  Type the code that you see above. Then run the playground to try it out.
  */
 // Define the function here
-
+func flipOff(person: String) {
+    print("F*ck you \(person)! You're a cunt")
+}
+flipOff(person: "Donald Trump")
 
 // Now greet Sara by invoking the function
 
@@ -41,7 +44,7 @@ import Foundation
  
  */
 // Invoke the function many more times to greet five friends
-
+flipOff(person: "Kim JUng Il")
 /*:
  By encapsulating behaviour of a program inside a function, it is easier to maintain.
  

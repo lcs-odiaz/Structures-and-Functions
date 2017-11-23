@@ -21,8 +21,19 @@ import Foundation
  Type the code that you see above. Then run the playground to try it out.
  */
 // Define the function here
-
+/// calculates the distance of two points on a cartesian plain
+///
+/// - Parameters:
+///   - fromX: the x-value of the first point
+///   - fromY: the y-value of the first point
+///   - toX: the x-value of the second point
+///   - toY: y-value of the second point
+/// - Returns: The distance between the first and second point.
+func distannce(fromX: Double, fromY: Double, toX:Double, toY: Double) -> Double {
+    return sqrt(pow(fromX - toX, 2) + pow(fromY - toY, 2))
+}
 // Now invoke the function to calculate the distance between (0, 0) and (3, 4)
+distannce(fromX: 0, fromY: 0, toX: 3, toY: 4) //the result will be 5
 // NOTE: Before you run the code, make a prediction about the distance between these two points.
 
 /*:
