@@ -7,6 +7,8 @@
  Please do not remove.
  */
 import Foundation
+
+
 /*:
  ## Structures
  A structure is a way of defining a custom data type.
@@ -28,6 +30,10 @@ import Foundation
 */
 
 // Define the structure here
+struct Point {
+    var x : Double = 0.0
+    var y : Double = 0.0
+}
 
 /*:
  
@@ -42,6 +48,9 @@ import Foundation
  */
 
 // Create the points here
+var start = Point()
+var end = Point(x: 3.0, y: 4.0)
+
 
 /*:
  
@@ -61,7 +70,10 @@ import Foundation
 */
 
 // Query the points here to find the x and y values separately
-
+start.x
+end.y
+start.y
+end.x
 
 /*:
  ### Refactoring code
@@ -87,11 +99,16 @@ import Foundation
  When the function is invoked, which version is more readable?
  
  */
-
 // Re-define the distance function here
-
+func distance(from: Point, to: Point) -> Double {
+    return sqrt(pow(start.x - end.x, 2) + pow(start.y - end.y, 2))
+}
 
 // Invoke the new function here
+
+distance(from: start, to: end)
+
+
 
 
 /*:
