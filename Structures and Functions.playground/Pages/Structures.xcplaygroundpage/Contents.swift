@@ -106,7 +106,7 @@ func distance(from: Point, to: Point) -> Double {
 
 // Invoke the new function here
 
-distance(from: start, to: end)
+distance (from: start, to: end)
 
 
 

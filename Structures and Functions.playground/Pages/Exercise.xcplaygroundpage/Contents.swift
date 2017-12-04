@@ -32,4 +32,55 @@ import Foundation
 
 */
 
-// Begin here... 
+
+//structure that represents  point on a plane
+struct Point {
+    var x : Double = 0.0
+    var y : Double = 0.0
+}
+
+// define a structure that represents a slope
+struct Slope {
+    var rise : Double = 1.0
+    var run : Double = 1.0
+}
+
+//
+var cabinsite = Point(x: 6, y: 1.5)
+  
+//define a structure that represents a slope
+struct Line {
+    var slope : Slope = Slope(rise: 1.0, run: 1.0)
+    var yInt : Double = 3.0
+}
+
+// create instance of problem
+var slopeOfExitingRoad = Slope(rise : -1, run : 1.0)
+var existingRoad = Line (slope : slopeOfExitingRoad, yInt : 9.5)
+    
+
+func getSlopeOfPerpendicularLine(from givenLine: Line) -> Slope {
+
+    return Slope(rise: givenLine.slope.run, run: givenLine.slope.rise * -1)
+}
+
+//get the perpendicular slope
+let perpendcilarSlope = getSlopeOfPerpendicularLine (from: existingRoad)
+
+
+//next video: 6
+
+
+
+
+
+
+
+// shortest distance func is created
+func distance(from: Point, to: Line) -> Double {
+    let nSlope = (1 / -line.slope)
+    let nInt = point.y - nSlope * point.x
+    let x = (line.yInt - nInt) / (nSlope + line.slope)
+    let y = nInt + line.yInt + nSlope*x + line.slope*x
+    return nInt + line.yInt + nSlope*x + line.slope*x
+}
