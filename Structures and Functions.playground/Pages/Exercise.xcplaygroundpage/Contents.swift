@@ -65,16 +65,21 @@ func getSlopeOfPerpendicularLine(from givenLine: Line) -> Slope {
 }
 
 //get the perpendicular slope
-let perpendcilarSlope = getSlopeOfPerpendicularLine (from: existingRoad)
+let perpendicularSlope = getSlopeOfPerpendicularLine (from: existingRoad)
 
+func getYintercept(from p: Point, onlineWith m: Slope) -> Double {
+    //get slope as a decimal
+    let mDecimal = m.rise / m.run
+    //b = y - m * x
+    return p.y - mDecimal * p.x
+}
 
-//next video: 6
+let perpendicularLineYintercept = getYintercept(from: cabinsite, onlineWith: perpendicularSlope)
 
+//define equation of new line
+let newRoad = Line(slope: perpendicularSlope, yInt: perpendicularLineYintercept)
 
-
-
-
-
+//next vid 7
 
 // shortest distance func is created
 func distance(from: Point, to: Line) -> Double {
