@@ -34,10 +34,6 @@ import Foundation
 
 
 //structure that represents  point on a plane
-struct Point {
-    var x : Double = 0.0
-    var y : Double = 0.0
-}
 
 // define a structure that represents a slope
 struct Slope {
@@ -76,16 +72,36 @@ func getYintercept(from p: Point, onlineWith m: Slope) -> Double {
 
 let perpendicularLineYintercept = getYintercept(from: cabinsite, onlineWith: perpendicularSlope)
 
-//define equation of new line
+
 let newRoad = Line(slope: perpendicularSlope, yInt: perpendicularLineYintercept)
 
-//next vid 7
+func getPointOfIntersection(between first: Line, and second: Line) -> Point {
+    //x = (b1 - b2) / (m2 - m1)
+    
+    // get vertical intercept difference
+    let verticalInterceptDifference = first.yInt - second.yInt
+    
+    // slope difference
+    let slopeDifference = second.slope.rise / second.slope.run - first.slope.rise / first.slope.run
+    //Get actual xvalue
+    let x = verticalInterceptDifference / slopeDifference
+    
+    //get actual yvlaue (substitution)
+    // y = m1 * x + b1
+    let y = first.slope.rise / first.slope.run * x + first.yInt
+    
+    //return point of intersection
+    
+    return Point(x: x, y: y)
+}
+getPointOfIntersection(between: existingRoad, and: newRoad)
 
 // shortest distance func is created
-func distance(from: Point, to: Line) -> Double {
-    let nSlope = (1 / -line.slope)
-    let nInt = point.y - nSlope * point.x
-    let x = (line.yInt - nInt) / (nSlope + line.slope)
-    let y = nInt + line.yInt + nSlope*x + line.slope*x
-    return nInt + line.yInt + nSlope*x + line.slope*x
-}
+//func distance(from: Point, to: Line) -> Double {
+//    let nSlope = (1 / -line.slope)
+//    let nInt = point.y - nSlope * point.x
+//    let x = (line.yInt - nInt) / (nSlope + line.slope)
+//    let y = nInt + line.yInt + nSlope*x + line.slope*x
+//    return nInt + line.yInt + nSlope*x + line.slope*x
+//}
+
